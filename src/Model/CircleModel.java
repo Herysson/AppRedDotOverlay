@@ -1,12 +1,12 @@
 package Model;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 
-public class CircleModel {
+public class CircleModel implements Serializable{
     private int centerX;
     private int centerY;
     private int radius;
@@ -52,22 +52,29 @@ public class CircleModel {
     public Ellipse2D getShape() {
         return new Ellipse2D.Double(centerX - radius, centerY - radius, radius * 2, radius * 2);
     }
-    public void saveConfigurationToFile(){
+    public void saveConfiguration(String arquivo){
         //criar um comando para salvar a configuração
         try {
-            FileWriter writer = new FileWriter("circleConfig.txt");
-            writer.write(color.getRed() + "\n");
-            writer.write(color.getGreen() + "\n");
-            writer.write(color.getBlue() + "\n");
-            writer.write(centerX + "\n");
-            writer.write(centerY + "\n");
-            writer.write(radius + "\n");
-            writer.close();
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(arquivo));
+            outputStream.writeObject(this);
+            outputStream.close();
+            JOptionPane.showMessageDialog(null,"Configurações salvas com sucesso.");
         } catch (IOException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null,"Erro ao salvar as configurações: "
+                    + e.getMessage());
         }
     }
-    public void loadConfigurationToFile() {
+    public static CircleModel loadConfigurationToFile(String arquivo) {
         //sempre que o programa for aberto fazer load da configuração.
+        CircleModel circleModel = null;
+        try {
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(arquivo));
+            circleModel = (CircleModel) inputStream.readObject();
+            inputStream.close();
+        } catch (IOException | ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(null,"Erro ao carregar as configurações: "
+                    + e.getMessage());
+        }
+        return circleModel;
     }
 }

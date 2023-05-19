@@ -38,6 +38,9 @@ public class MenuController implements KeyListener {
                 circle.changeSize();
                 break;
             case KeyEvent.VK_F3:
+                circle.saveConfiguration("configuration.ser");
+                break;
+            case KeyEvent.VK_F4:
                 // Executa ação para F3 - Exit DotOverlay
                 System.exit(0);
                 break;

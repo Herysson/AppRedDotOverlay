@@ -1,3 +1,5 @@
+package App;
+
 import Controller.MenuController;
 import Model.CircleModel;
 import View.AppView;
@@ -9,7 +11,11 @@ public class AppRedDotOverlay {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int centerX = (int) (screenSize.getWidth()/2);
         int centerY = (int) (screenSize.getHeight()/2);
-        CircleModel circle = new CircleModel(centerX,centerY,6, Color.RED);
+
+        CircleModel circle = CircleModel.loadConfigurationToFile("configuration.ser");
+        if(circle==null){
+            circle = new CircleModel(centerX,centerY,6,Color.RED);
+        }
 
         AppView view = new AppView(circle);
         MenuController controller = new MenuController(view, circle);
