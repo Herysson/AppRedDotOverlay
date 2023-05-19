@@ -84,7 +84,7 @@ public class CircleModel implements Serializable{
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         centerX = (int) (screenSize.getWidth()/2);
         centerY = (int) (screenSize.getHeight()/2);
-        radius = 4;
+        radius = 6;
         color = Color.RED;
     }
 
