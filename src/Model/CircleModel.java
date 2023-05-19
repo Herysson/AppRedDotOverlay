@@ -68,9 +68,12 @@ public class CircleModel implements Serializable{
         //sempre que o programa for aberto fazer load da configuração.
         CircleModel circleModel = null;
         try {
-            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(arquivo));
-            circleModel = (CircleModel) inputStream.readObject();
-            inputStream.close();
+            File file = new File(arquivo);
+            if (file.exists()) {
+                ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(arquivo));
+                circleModel = (CircleModel) inputStream.readObject();
+                inputStream.close();
+            }
         } catch (IOException | ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null,"Erro ao carregar as configurações: "
                     + e.getMessage());
