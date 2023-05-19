@@ -6,9 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class AppView extends JFrame {
-    private CircleModel circle;
-    private DrawingPanel drawingPanel;
-    private JLabel messageLabel;
+    private final CircleModel circle;
     private JPanel menuPanel;
     private String htmlMenu;
     public AppView(CircleModel circle) {
@@ -29,11 +27,11 @@ public class AppView extends JFrame {
         Color color = Color.WHITE;
 
         // Criação dos JPanels
-        drawingPanel = new DrawingPanel(circle);
+        DrawingPanel drawingPanel = new DrawingPanel(circle);
         menuPanel = new JPanel();
 
         // Cria um JLabel com a mensagem a ser exibida no menu
-        messageLabel = new JLabel(htmlMenu);
+        JLabel messageLabel = new JLabel(htmlMenu);
 
         // Define a fonte e a cor do JLabel
         messageLabel.setFont(font);
@@ -45,7 +43,7 @@ public class AppView extends JFrame {
 
         // Configuração do menuPanel (preto)
         menuPanel.setBackground(Color.BLACK);
-        menuPanel.setSize(250, 290);
+        menuPanel.setSize(250, 320);
 
         // Posicionamento do menuPanel no canto superior direito
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -95,6 +93,10 @@ public class AppView extends JFrame {
                 + "<tr>"
                 + "<td>F3</td>"
                 + "<td>Save Configuration</td>"
+                + "</tr>"
+                + "<tr>"
+                + "<td>F9</td>"
+                + "<td>Reset Configuration</td>"
                 + "</tr>"
                 + "<tr>"
                 + "<td>F4</td>"

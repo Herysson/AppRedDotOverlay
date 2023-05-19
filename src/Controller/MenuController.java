@@ -44,6 +44,10 @@ public class MenuController implements KeyListener {
                 // Executa ação para F3 - Exit DotOverlay
                 System.exit(0);
                 break;
+            case KeyEvent.VK_F9:
+                //Reseta as configurações originais
+                circle.resetConfiguration();
+                break;
             case KeyEvent.VK_LEFT:
                 circle.setCenterX(circle.getCenterX()-1);
                 break;
