@@ -58,9 +58,9 @@ public class CircleModel implements Serializable{
             ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(arquivo));
             outputStream.writeObject(this);
             outputStream.close();
-            JOptionPane.showMessageDialog(null,"Configurações salvas com sucesso.");
+            JOptionPane.showMessageDialog(null,"Settings saved successfully.");
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null,"Erro ao salvar as configurações: "
+            JOptionPane.showMessageDialog(null,"Error while saving configurations: "
                     + e.getMessage());
         }
     }
@@ -75,7 +75,7 @@ public class CircleModel implements Serializable{
                 inputStream.close();
             }
         } catch (IOException | ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null,"Erro ao carregar as configurações: "
+            JOptionPane.showMessageDialog(null,"Error while loading configurations: "
                     + e.getMessage());
         }
         return circleModel;

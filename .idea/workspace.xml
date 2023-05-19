@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5274900e-c7a6-4a6b-b14c-cfbaa1ee6ba2" name="Changes" comment="Removido o erro ao não encontrar o arquivo quando o programa é executado pela primeira vez.">
+    <list default="true" id="5274900e-c7a6-4a6b-b14c-cfbaa1ee6ba2" name="Changes" comment="Alterado o raio utilizado no reset configuration para 6.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/CircleModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CircleModel.java" afterDir="false" />
     </list>
@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684505332688</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Alterado o raio utilizado no reset configuration para 6.">
+      <created>1684507136142</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684507136142</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +149,7 @@
     <MESSAGE value="Nesta versão o sistema tem todas as funcionalidades propostas, mas ainda não salva as configurações do usuário." />
     <MESSAGE value="Acrescentado um reset para as configurações" />
     <MESSAGE value="Removido o erro ao não encontrar o arquivo quando o programa é executado pela primeira vez." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removido o erro ao não encontrar o arquivo quando o programa é executado pela primeira vez." />
+    <MESSAGE value="Alterado o raio utilizado no reset configuration para 6." />
+    <option name="LAST_COMMIT_MESSAGE" value="Alterado o raio utilizado no reset configuration para 6." />
   </component>
 </project>
